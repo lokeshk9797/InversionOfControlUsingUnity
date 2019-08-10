@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 
 namespace InversionOfControlUsingUnity
 {
@@ -45,19 +46,34 @@ namespace InversionOfControlUsingUnity
         {
             _car = car;
         }
-        public void RunCar()
+        public void CheckSpeed()
         {
             Console.WriteLine($"Running {_car.GetType().Name} at speed {_car.Topspeed()}");
         }
     }
+
+    
 
     class Program
     {
         
         static void Main(string[] args)
         {
-           
 
+            IUnityContainer container = new UnityContainer();
+            container.RegisterType<ICar, Mclaren>();
+
+
+            //Code without Unity Container
+            //Driver driver = new Driver(new Maruti());
+            //driver.CheckSpeed();
+
+            //Code after Using Unity Container
+            Driver driver = container.Resolve<Driver>();
+            driver.CheckSpeed();
+
+
+            Console.ReadKey();
         }
     }
 }
