@@ -51,6 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Battery.cs" />
+    <Compile Include="Class\ContainerAction.cs" />
+    <Compile Include="Class\Radio.cs" />
+    <Compile Include="Class\Tuner.cs" />
+    <Compile Include="Interface\IBattery.cs" />
+    <Compile Include="Interface\IRadio.cs" />
+    <Compile Include="Interface\ITuner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,5 +65,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
