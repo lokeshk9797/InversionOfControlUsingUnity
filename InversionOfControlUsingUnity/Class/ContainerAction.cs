@@ -23,6 +23,8 @@ namespace InversionOfControlUsingUnity.Class
 
 
         //}
+
+        // Registering the Dependencies
         public static void RegisterElements(IUnityContainer container)
         {
             container.RegisterType<IBattery, Battery>();
