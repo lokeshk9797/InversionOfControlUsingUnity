@@ -17,9 +17,12 @@ namespace InversionOfControlUsingUnity
             IUnityContainer container = new UnityContainer();
             ContainerAction.RegisterElements(container);
 
+            //Checking for the Charge of the Battery
             IBattery battery = container.Resolve<IBattery>();
             Console.WriteLine(battery.ChargeRemaining());
 
+
+            //Checking for the Tuner Manufacturer
             ITuner tuner = container.Resolve<ITuner>();
             Console.WriteLine(tuner.Manufacturer());
 
